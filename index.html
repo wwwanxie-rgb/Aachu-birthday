@@ -1,21 +1,65 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
-    <meta
-      name="viewport"
-      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover"
-    />
-    <meta name="apple-mobile-web-app-capable" content="yes" />
-    <meta
-      name="apple-mobile-web-app-status-bar-style"
-      content="black-translucent"
-    />
-    <title>Happy Birthday Divyanshi ðŸŽ‚</title>
-  </head>
-  <body>
-    <div id="root"></div>
-    <script type="module" src="/src/main.jsx"></script>
-  </body>
+<head>
+  <meta charset="UTF-8">
+  <title>Happy Birthday Aachu </title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body {
+      margin: 0;
+      height: 100vh;
+      background: linear-gradient(135deg, #ff9a9e, #fad0c4);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-family: Arial, sans-serif;
+      color: white;
+      text-align: center;
+    }
+    .box {
+      background: rgba(0,0,0,0.3);
+      padding: 30px;
+      border-radius: 15px;
+    }
+    h1 {
+      font-size: 2.5rem;
+    }
+    #countdown {
+      font-size: 1.8rem;
+      margin-top: 15px;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="box">
+    <h1> Happiest Birthday My Love </h1>
+    <p>Dear Aachu, enjoy your day </p>
+    <div id="countdown"></div>
+    <p>— From Anshie </p>
+  </div>
+
+  <script>
+    const birthday = new Date("2025-12-30T00:00:00").getTime();
+
+    setInterval(() => {
+      const now = new Date().getTime();
+      const diff = birthday - now;
+
+      if (diff <= 0) {
+        document.getElementById("countdown").innerHTML = " IT'S YOUR BIRTHDAY ";
+        return;
+      }
+
+      const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+      const hours = Math.floor((diff / (1000 * 60 * 60)) % 24);
+      const minutes = Math.floor((diff / (1000 * 60)) % 60);
+      const seconds = Math.floor((diff / 1000) % 60);
+
+      document.getElementById("countdown").innerHTML =
+        `${days} Days ${hours} Hours ${minutes} Minutes ${seconds} Seconds`;
+    }, 1000);
+  </script>
+
+</body>
 </html>
